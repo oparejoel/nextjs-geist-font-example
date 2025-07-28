@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.carregistration.controller.MainController">
+    
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem text="New Registration" onAction="#handleNewRegistration"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Export Data" onAction="#handleExportData"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Exit" onAction="#handleExit"/>
+                </Menu>
+                <Menu text="Edit">
+                    <MenuItem text="Edit Selected" onAction="#handleEditCar"/>
+                    <MenuItem text="Delete Selected" onAction="#handleDeleteCar"/>
+                </Menu>
+                <Menu text="View">
+                    <MenuItem text="Refresh" onAction="#handleRefresh"/>
+                    <MenuItem text="Search" onAction="#handleSearch"/>
+                </Menu>
+                <Menu text="Help">
+                    <MenuItem text="About" onAction="#handleAbout"/>
+                </Menu>
+            </MenuBar>
+            
+            <HBox spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+                <TextField fx:id="searchField" promptText="Search cars..." prefWidth="300"/>
+                <Button text="Search" onAction="#handleSearch"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="New Registration" onAction="#handleNewRegistration" 
+                        style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <TableView fx:id="carsTable" prefHeight="600">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="makeColumn" text="Make" prefWidth="100"/>
+                <TableColumn fx:id="modelColumn" text="Model" prefWidth="100"/>
+                <TableColumn fx:id="yearColumn" text="Year" prefWidth="80"/>
+                <TableColumn fx:id="licensePlateColumn" text="License Plate" prefWidth="120"/>
+                <TableColumn fx:id="ownerNameColumn" text="Owner Name" prefWidth="150"/>
+                <TableColumn fx:id="registrationDateColumn" text="Registration Date" prefWidth="120"/>
+                <TableColumn fx:id="colorColumn" text="Color" prefWidth="80"/>
+                <TableColumn fx:id="vinColumn" text="VIN" prefWidth="200"/>
+                <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="150"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </center>
+    
+    <bottom>
+        <HBox spacing="10" style="-fx-padding: 10; -fx-background-color: #f0f0f0;">
+            <Label fx:id="statusLabel" text="Ready"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="totalCarsLabel" text="Total Cars: 0"/>
+        </HBox>
+    </bottom>
+</BorderPane>
