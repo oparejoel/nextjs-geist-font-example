@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<DialogPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.carregistration.controller.CarFormController">
+    
+    <content>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <Text text="Car Registration Form" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+            
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="100"/>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+                </columnConstraints>
+                
+                <!-- Make -->
+                <Label text="Make:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="makeField" promptText="e.g., Toyota" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                
+                <!-- Model -->
+                <Label text="Model:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="modelField" promptText="e.g., Camry" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                
+                <!-- Year -->
+                <Label text="Year:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <Spinner fx:id="yearSpinner" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                
+                <!-- License Plate -->
+                <Label text="License Plate:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="licensePlateField" promptText="e.g., ABC123" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                
+                <!-- VIN -->
+                <Label text="VIN:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="vinField" promptText="Vehicle Identification Number" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                
+                <!-- Owner Name -->
+                <Label text="Owner Name:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <TextField fx:id="ownerNameField" promptText="Full name of the owner" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                
+                <!-- Color -->
+                <Label text="Color:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <TextField fx:id="colorField" promptText="e.g., Red" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                
+                <!-- Owner Phone -->
+                <Label text="Phone:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                <TextField fx:id="ownerPhoneField" promptText="Contact number" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+                
+                <!-- Owner Email -->
+                <Label text="Email:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                <TextField fx:id="ownerEmailField" promptText="Email address" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+                
+                <!-- Owner Address -->
+                <Label text="Address:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+                <TextArea fx:id="ownerAddressField" promptText="Full address" 
+                          prefRowCount="3" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+                
+                <!-- Registration Date -->
+                <Label text="Registration Date:" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="registrationDatePicker" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+            </GridPane>
+            
+            <!-- Error Messages -->
+            <VBox fx:id="errorMessages" spacing="5" style="-fx-padding: 10; -fx-background-color: #ffebee; -fx-border-color: #f44336; -fx-border-radius: 4px;"/>
+            
+            <!-- Buttons -->
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button fx:id="saveButton" text="Save" defaultButton="true"/>
+                <Button fx:id="cancelButton" text="Cancel" cancelButton="true"/>
+            </HBox>
+        </VBox>
+    </content>
+</DialogPane>
